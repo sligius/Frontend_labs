@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cat</title>
-    <style>
-        body
-        {
-            font-family: garamond;
-            text-align: center;
-            font-size: 300%;
-            background: linear-gradient(to right, rgb(157, 222, 248), rgb(255, 218, 243));
-        }
-    </style>
+    <link href="cat-page.css" rel="stylesheet">
 </head>
 <body>
-    <img src="sources/cat.jpg" alt="смешной кот" width="49%" height="100%">
-    <img src="sources/cat.jpg" alt="смешной кот" width="49%" height="100%">
-    <p>просто два кота</p>
+    <div class="image-container">
+        <img src="sources/cat.jpg" alt="смешной кот">
+        <img src="sources/cat.jpg" alt="смешной кот">
+        <img src="sources/cat.jpg" alt="смешной кот">
+    </div>
+    <p>просто три кота</p>
+    <form>
+        хорошие коты? <br>
+        <input type = "checkbox" name = "type1" value = "yes"> да<br>
+        <input type = "checkbox" name = "type2" value = "ofcourse"> конечно<br>
+        <input type = "checkbox" name = "type3" value = "definitely"> определенно<br>
+        <input type = "submit" name = "submit" value = "ответить">
+    </form>
 </body>
 </html>
