@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
     <link href="main-page.css" rel="stylesheet">
+    <script>
+        function testData()
+        {
+            alert("Test")
+            var nameText = document.getElementById("name").value;
+            var emailText = document.getElementById("email").value;
+            var offerText = document.getElementById("offer").value;
+            document.getElementById("input_name").value = nameText;
+            document.getElementById("input_email").value= emailText;
+            document.getElementById("input_offer").value = offerText;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -71,20 +83,39 @@
 
             <div class="offer_form">
                 <h2>Предложить вакансию</h2>
-                <form action="process_form.php" method="POST">
-                    <label for="name">Ваше имя:</label>
-                    <input type="text" name="user_name" id="name" required>
-                    <br><br>
-                    <label for="email">Ваш Email:</label>
-                    <input type="email" name="user_email" id="email" required>
-                    <br><br>
-                    <label for="offer">Ваше предложение:</label>
-                    <textarea name="offer" id="user_offer" rows="5" required></textarea>
-                    <br><br>
-                    <input type="submit" value="Отправить">
+                <form name="OfferForm" action="post.php" method="post">
+                    <div>
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" name="user_name" id="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Ваш Email:</label>
+                        <input type="email" name="user_email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="offer">Ваше предложение:</label>
+                        <textarea name="user_offer" id="offer" rows="5" required></textarea>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Отправить</button>
+                    </div>
                 </form>
-
-                
+                <!--
+                <div class="output">
+                    <div>
+                        <p>Ваше имя:</p>
+                        <input type="text" id="input_name">
+                    </div>
+                    <div>
+                        <p>Ваш Email:</p>
+                        <input type="text" id="input_email">
+                    </div>
+                    <div>
+                        <p>Ваше предложение:</p>
+                        <input type="text" id="input_offer">
+                    </div>
+                </div>
+                -->
             </div>
         </main>
         <footer>

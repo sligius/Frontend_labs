@@ -111,10 +111,16 @@ footer p{
 form {
     width: 300px;
 }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
+
+form label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -122,7 +128,7 @@ form {
     margin-top: 5px;
 }
   
-  input[type="submit"] {
+button[type="submit"] {
     padding:5px 15px 10px 15px; 
     background:#faf9f9; 
     cursor:pointer;
@@ -132,13 +138,36 @@ form {
     font-family: garamond;
 }
   
-  input[type=submit]:hover {
+button[type=submit]:hover {
     background:#9a8ba3; 
 }
 
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  textarea:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
     outline: none;
     border-color: rgba(101, 18, 139, 0.42);
+}
+
+.output {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.output input[type="text"],
+input[type="email"],
+textarea {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.output p{
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
