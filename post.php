@@ -6,9 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $to = "asvapake@gmail.com";
     $subject = "Новое предложение от пользователя";
-    $message = "Имя: " . $userName . "\n";
-    $message .= "Email: " . $userEmail . "\n";
-    $message .= "Предложение: " . $userOffer . "\n";
+    $message .= $userOffer;
 
     if (mail($to, $subject, $message)) {
         echo "Ваше предложение отправлено.";
