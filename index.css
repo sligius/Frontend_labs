@@ -95,6 +95,14 @@
     margin: 0 15px;
 }
 
+.card-header {
+    background-color: rgb(214, 170, 255);
+}
+
+.wisdom {
+    background-color: rgb(237, 219, 255);
+}
+
 @media (max-width: 576px) {
     .navbar-nav .nav-link {
       margin-top: 10px; 
