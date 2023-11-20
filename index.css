@@ -103,9 +103,26 @@
     background-color: rgb(237, 219, 255);
 }
 
+#liveAlertBtn {
+    background-color: rgb(50, 4, 102);
+    border: 3px solid rgb(89, 7, 182);
+    color: aliceblue;
+    font-weight: lighter;
+    border-radius: 20px;
+}
+
+#liveAlertBtn:hover {
+    background-color: rgb(77, 3, 161);
+}
+
+.alert {
+    background-color: rgb(187, 186, 255);
+    border: 1px solid rgb(89, 7, 182);
+    color: black;
+}
+
 @media (max-width: 576px) {
     .navbar-nav .nav-link {
-      margin-top: 10px; 
+        margin-top: 10px;
     }
-  }
-  
+}
