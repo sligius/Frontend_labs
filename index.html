@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
-                    <img src="sources/cv_image.jpg" class="img-fluid my-rounded" alt="Фотография">
+                    <img id="myImage" src="sources/cv_image.jpg" class="img-fluid my-rounded" alt="Фотография">
                 </div>
             </div>
             <hr>
@@ -99,7 +99,7 @@
             </div>
         </div>
 
-        <div class="card mb-3 wisdom">
+        <div id="myWisdom" class="card mb-3 wisdom">
             <div class="card-header">
                 Житейская мудрость
             </div>
@@ -111,7 +111,7 @@
                     </blockquote>
                 </div>
                 <div class="right-part-quote mt-2 d-flex flex-column align-items-end">
-                    <button type="button" class="btn btn-info" id="liveAlertBtn">согласен</button>
+                    <button type="button" class="btn btn-info pt-0 pb-1" id="liveAlertBtn">согласен</button>
                     <div id="liveAlertPlaceholder" class="mt-3"></div>
                 </div>
             </div>
@@ -160,6 +160,9 @@
         const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
 
         const alert = (message, type) => {
+            while (alertPlaceholder.firstChild) {
+                alertPlaceholder.removeChild(alertPlaceholder.firstChild);
+            }
             const wrapper = document.createElement('div')
             wrapper.innerHTML = [
                 `<div class="alert alert-${type} alert-dismissible" role="alert">`,
@@ -177,6 +180,64 @@
                 alert('правильно, умный человек ведь сказал', 'info')
             })
         }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous">
+        </script>
+    <script>
+
+        // Обработчик события для наведения и покидания курсора
+        $(document).ready(function () {
+            $(".main_info").hover(
+                function () {
+                    $(this).css({
+                        "background-image": "url('sources/background-coursor.jpg')",
+                        "background-size": "cover"
+                    });
+                },
+                function () {
+                    $(this).css({
+                        "background-image": "none",
+                        "background-size": "auto"
+                    });
+                }
+            );
+        });
+
+        // Обработчик события для смены картинки по двойному клику
+        $(document).ready(function () {
+            $("#myImage").dblclick(function () {
+                $(this).attr("src", "sources/cv_image-change.jpg");
+            });
+        });
+
+        // Обработчик события для смены цвета фона по скроллу
+        $(window).scroll(function () {
+            var wisdomOffset = $('#myWisdom').offset().top - $(window).height() / 2;
+
+            if ($(this).scrollTop() > wisdomOffset) {
+                $('body').css('background-color', '#000');
+            } else {
+                $('body').css('background-color', '#fff');
+            }
+        });
+
+        // Обработчик события для закрытия алерта
+        $(document).on('click', '#liveAlertBtn', function () {
+            setTimeout(function () {
+                $('.alert').alert('close');
+            }, 10000);
+        });
+
+        // Функция, которая снова включает автоматическое пролистывание карусели после воздействия пользователя
+        $(document).ready(function () {
+            $('#myCarousel').on('slid.bs.carousel', function () {
+                $('#myCarousel').carousel('dispose');
+                $('#myCarousel').carousel('cycle');
+                $('#myCarousel').carousel();
+            });
+        });
     </script>
 </body>
 
