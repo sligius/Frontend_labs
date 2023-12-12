@@ -121,6 +121,22 @@
     color: black;
 }
 
+#myCarousel {
+    max-width: 2048px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.rotate-text {
+    position: absolute;
+    transform: rotate(-90deg) translateX(145%) translateY(555%);
+    transform-origin: right;
+}
+
 @media (max-width: 576px) {
     .navbar-nav .nav-link {
         margin-top: 10px;

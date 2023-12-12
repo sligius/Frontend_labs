@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,49 @@
     <title>video</title>
     <link href="video-page.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="video-container">
-        <video class="round-video" 
-        src="sources/legend.mp4" 
-        muted loop autoplay
-        >
+        <video class="round-video" src="sources/legend.mp4" muted loop autoplay>
         </video>
     </div>
     <div class="video-container">
-        <video class="round-video" 
-        src="sources/legend.mp4" 
-        muted loop autoplay
-        >
+        <video class="round-video" src="sources/legend2.mp4" muted loop autoplay>
         </video>
     </div>
     <div class="video-container">
-        <video class="round-video" 
-        src="sources/legend.mp4" 
-        muted loop autoplay
-        >
+        <video class="round-video" src="sources/legend3.mp4" muted loop autoplay>
         </video>
     </div>
     <div class="video-container">
-        <video class="round-video" 
-        src="sources/legend.mp4" 
-        muted loop autoplay
-        >
+        <video class="round-video" src="sources/legend4.mp4" muted loop autoplay>
         </video>
     </div>
+    <script>
+        const videos = document.querySelectorAll('.round-video');
+
+        videos.forEach(video => {
+            video.addEventListener('click', event => {
+
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.mozRequestFullScreen) { /* Firefox */
+                    video.mozRequestFullScreen();
+                } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { /* IE/Edge */
+                    video.msRequestFullscreen();
+                }
+
+                videos.forEach(otherVideo => {
+                    if (otherVideo !== video) {
+                        otherVideo.muted = true;
+                        video.muted = false;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
